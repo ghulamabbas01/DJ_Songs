@@ -1,13 +1,21 @@
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomeLogin from "./pages/HomeLogin";
+import Login from "./pages/Login";
+import InterCode from "./pages/InterCode";
+import CreateAccount from "./pages/CreateAccount";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="bg-gray-200 p-4">
-      <h1 className="text-2xl font-bold text-blue-500">Hello Tailwind CSS!</h1>
-      <p className="text-gray-700 mt-2">
-        This is a React app with Tailwind CSS.
-      </p>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomeLogin />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/InterCode" element={<InterCode />} />
+        <Route path="/CreateAccount" element={<CreateAccount />} />
+        <Route path="/Home" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 

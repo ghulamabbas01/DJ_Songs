@@ -34,9 +34,7 @@ const Login = () => {
     <Box className="max_container text-center bg-black text-gray-500 p-10 ">
       <h1 className="text-[48px] font-medium pb-7 text-white">Login</h1>
       <Stack>
-        <label
-          htmlFor="input-group-1"
-          className="mb-2 text-sm font-medium text-white dark:text-white text-left">
+        <label className="mb-2 text-sm font-medium text-white dark:text-white text-left">
           Your Email
         </label>
         <div className="relative mb-6">
@@ -53,9 +51,7 @@ const Login = () => {
           />
         </div>
         {/* Password input  */}
-        <label
-          htmlFor="input-group-2"
-          className="mb-2 text-sm font-medium text-white dark:text-white text-left">
+        <label className="mb-2 text-sm font-medium text-white dark:text-white text-left">
           Password
         </label>
         <div className="relative mb-6 flex items-center">

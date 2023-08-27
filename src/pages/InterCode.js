@@ -18,7 +18,7 @@ const InterCode = () => {
         {/* code input  */}
         <label
           for="input-group-1"
-          class="mb-2 text-sm font-medium text-white dark:text-white text-left">
+          className="mb-2 text-sm font-medium text-white dark:text-white text-left">
           Event Code
         </label>
         <div className="relative mb-6 flex items-center">

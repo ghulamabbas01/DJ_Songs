@@ -25,68 +25,68 @@ const CreateAccount = () => {
 
         <label
           for="input-group-1"
-          class=" mb-2 text-sm font-medium text-white dark:text-white text-left">
+          className=" mb-2 text-sm font-medium text-white dark:text-white text-left">
           Username
         </label>
-        <div class="relative mb-6">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <div className="relative mb-6">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
             <BorderColorOutlinedIcon />
           </div>
           <input
             type="text"
             id="input-group-1"
-            class=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
+            className=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
             placeholder="name@flowbite.com"
           />
         </div>
         {/* payPal input */}
         <label
           for="input-group-1"
-          class=" mb-2 text-sm font-medium text-white dark:text-white text-left">
+          className=" mb-2 text-sm font-medium text-white dark:text-white text-left">
           PayPal Handle
         </label>
-        <div class="relative mb-6">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <div className="relative mb-6">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
             <PaymentOutlinedIcon />
           </div>
           <input
             type="text"
             id="input-group-1"
-            class=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
+            className=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
             placeholder="name@flowbite.com"
           />
         </div>
         {/* payPal input */}
         <label
           for="input-group-1"
-          class=" mb-2 text-sm font-medium text-white dark:text-white text-left">
+          className=" mb-2 text-sm font-medium text-white dark:text-white text-left">
           Email
         </label>
-        <div class="relative mb-6">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <div className="relative mb-6">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
             <Person2OutlinedIcon />
           </div>
           <input
             type="text"
             id="input-group-1"
-            class=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
+            className=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
             placeholder="name@flowbite.com"
           />
         </div>
         {/* Password input  */}
         <label
           for="input-group-1"
-          class="mb-2 text-sm font-medium text-white dark:text-white text-left">
+          className="mb-2 text-sm font-medium text-white dark:text-white text-left">
           Password
         </label>
-        <div class="relative mb-6 flex items-center ">
-          <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+        <div className="relative mb-6 flex items-center ">
+          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
             <LockOutlinedIcon />
           </div>
           <input
             type={showPassword ? "text" : "password"}
             id="input-group-1"
-            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-full pl-10 p-4  "
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-full pl-10 p-4  "
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

@@ -81,7 +81,7 @@ const Login = () => {
           startIcon={<KeyboardDoubleArrowRightOutlinedIcon />}
           sx={{ padding: 1.3 }}
           onClick={handleLogin}>
-          Login
+          Logins
         </Button>
         <Button
           variant="contained"

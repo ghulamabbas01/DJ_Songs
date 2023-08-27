@@ -1,111 +1,172 @@
 import React, { useState } from "react";
-// import material ui
-import { Box, Button, Stack, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+  InputAdornment,
+} from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
-// icons
-import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
-import VisibilityIcon from "@mui/icons-material/Visibility";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import DoubleArrowRoundedIcon from "@mui/icons-material/DoubleArrowRounded";
-import BorderColorOutlinedIcon from "@mui/icons-material/BorderColorOutlined";
 import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const CreateAccount = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [paypalHandle, setPaypalHandle] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  const handleTogglePassword = () => {
-    setShowPassword(!showPassword);
+  const handleCreateAccount = () => {
+    if (username && password) {
+      navigate("/Login");
+    } else {
+      setError("Username and password are required.");
+    }
   };
 
+  const clearInput = (inputField) => {
+    switch (inputField) {
+      case "username":
+        setUsername("");
+        break;
+      case "paypalHandle":
+        setPaypalHandle("");
+        break;
+      case "email":
+        setEmail("");
+        break;
+      case "password":
+        setPassword("");
+        break;
+      default:
+        break;
+    }
+  };
   return (
     <Box className="max_container text-center bg-black text-gray-500 p-10 ">
-      <Stack>
-        {/* Username input */}
+      <Stack spacing={2} className="mt-20 mb-4">
+        {/* usename textfield  */}
+        <TextField
+          id="input-with-icon-textfield"
+          label="Username"
+          placeholder="input"
+          fullWidth
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <DriveFileRenameOutlineOutlinedIcon />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <HighlightOffIcon
+                  onClick={() => clearInput("username")}
+                  style={{ cursor: "pointer" }}
+                />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+        />
+        {/* paypal acount input  */}
+        <TextField
+          id="input-with-icon-textfield"
+          label="Paypal handle"
+          placeholder="input"
+          fullWidth
+          type="number"
+          value={paypalHandle}
+          onChange={(e) => setPaypalHandle(e.target.value)}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <PaymentOutlinedIcon />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <HighlightOffIcon
+                  onClick={() => clearInput("paypalHandle")}
+                  style={{ cursor: "pointer" }}
+                />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+        />
+        {/* email  input*/}
+        <TextField
+          id="input-with-icon-textfield"
+          label="Email"
+          placeholder="input"
+          fullWidth
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <EmailOutlinedIcon />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <HighlightOffIcon
+                  onClick={() => clearInput("email")}
+                  style={{ cursor: "pointer" }}
+                />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+        />
 
-        <label
-          for="input-group-1"
-          className=" mb-2 text-sm font-medium text-white dark:text-white text-left">
-          Username
-        </label>
-        <div className="relative mb-6">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-            <BorderColorOutlinedIcon />
-          </div>
-          <input
-            type="text"
-            id="input-group-1"
-            className=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
-            placeholder="name@flowbite.com"
-          />
-        </div>
-        {/* payPal input */}
-        <label
-          for="input-group-1"
-          className=" mb-2 text-sm font-medium text-white dark:text-white text-left">
-          PayPal Handle
-        </label>
-        <div className="relative mb-6">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-            <PaymentOutlinedIcon />
-          </div>
-          <input
-            type="text"
-            id="input-group-1"
-            className=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
-            placeholder="name@flowbite.com"
-          />
-        </div>
-        {/* payPal input */}
-        <label
-          for="input-group-1"
-          className=" mb-2 text-sm font-medium text-white dark:text-white text-left">
-          Email
-        </label>
-        <div className="relative mb-6">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-            <Person2OutlinedIcon />
-          </div>
-          <input
-            type="text"
-            id="input-group-1"
-            className=" text-gray-900 text-sm rounded-lg  block w-full pl-10 p-4 "
-            placeholder="name@flowbite.com"
-          />
-        </div>
         {/* Password input  */}
-        <label
-          for="input-group-1"
-          className="mb-2 text-sm font-medium text-white dark:text-white text-left">
-          Password
-        </label>
-        <div className="relative mb-6 flex items-center ">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
-            <LockOutlinedIcon />
-          </div>
-          <input
-            type={showPassword ? "text" : "password"}
-            id="input-group-1"
-            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg  w-full pl-10 p-4  "
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <VisibilityIcon
-            onClick={handleTogglePassword}
-            className="absolute right-4 cursor-pointer"
-          />
-        </div>
+        <TextField
+          id="input-with-icon-textfield"
+          label="Password"
+          placeholder="input"
+          fullWidth
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <LockOutlinedIcon />
+              </InputAdornment>
+            ),
+            endAdornment: (
+              <InputAdornment position="end">
+                <HighlightOffIcon
+                  onClick={() => clearInput("password")}
+                  style={{ cursor: "pointer" }}
+                />
+              </InputAdornment>
+            ),
+          }}
+          variant="outlined"
+        />
       </Stack>
-      {/* buttons here */}
-      <Stack spacing={2} className="my-16">
+      {error && <Typography color="error">{error}</Typography>}
+      {/* Buttons */}
+      <Stack spacing={2} className="my-32">
         <Button
           variant="contained"
           color="primary"
           size="large"
           className="flex items-center"
-          startIcon={<DoubleArrowRoundedIcon />}
-          sx={{ padding: 1.3 }}>
+          startIcon={<ArrowRightIcon />}
+          sx={{ padding: 1.3 }}
+          onClick={handleCreateAccount}>
           Create Account
         </Button>
       </Stack>

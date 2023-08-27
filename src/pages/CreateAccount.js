@@ -51,7 +51,7 @@ const CreateAccount = () => {
     }
   };
   return (
-    <Box className="max_container text-center bg-black text-gray-500 p-10 ">
+    <Box className="max_container text-center bg-black text-gray-500 py-10 px-1 ">
       <Stack spacing={2} className="mt-20 mb-4">
         {/* usename textfield  */}
         <TextField
@@ -158,14 +158,14 @@ const CreateAccount = () => {
       </Stack>
       {error && <Typography color="error">{error}</Typography>}
       {/* Buttons */}
-      <Stack spacing={2} className="my-32">
+      <Stack spacing={2} className="my-32 px-12">
         <Button
           variant="contained"
           color="primary"
           size="large"
           className="flex items-center"
           startIcon={<ArrowRightIcon />}
-          sx={{ padding: 1.3 }}
+          sx={{ padding: 1.3, borderRadius: "40px" }}
           onClick={handleCreateAccount}>
           Create Account
         </Button>

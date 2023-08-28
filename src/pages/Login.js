@@ -23,14 +23,28 @@ const Login = () => {
     navigate("/Home"); // Navigate to the dashboard on successful login
   };
 
+  // Function to clear input fields
+  const clearInput = (inputField) => {
+    switch (inputField) {
+      case "email":
+        setEmail("");
+        break;
+      case "password":
+        setPassword("");
+        break;
+      default:
+        break;
+    }
+  };
+
   // navigate create account
   function CreateHandleClick() {
     navigate("/CreateAccount");
   }
 
   return (
-    <Box className="max_container text-center bg-black z-0 text-gray-500  px-1 ">
-      <Stack spacing={2} className="mt-20">
+    <Box className="max_container text-center bg-black z-0 text-gray-500 px-1 ">
+      <Stack spacing={2} className="pt-20">
         <TextField
           id="input-with-icon-textfield"
           label="Email"
@@ -46,7 +60,10 @@ const Login = () => {
             ),
             endAdornment: (
               <InputAdornment position="end">
-                <HighlightOffIcon />
+                <HighlightOffIcon
+                  onClick={() => clearInput("email")}
+                  className="cursor-pointer"
+                />
               </InputAdornment>
             ),
           }}
@@ -69,7 +86,10 @@ const Login = () => {
             ),
             endAdornment: (
               <InputAdornment position="end">
-                <HighlightOffIcon />
+                <HighlightOffIcon
+                  onClick={() => clearInput("password")}
+                  className="cursor-pointer"
+                />
               </InputAdornment>
             ),
           }}

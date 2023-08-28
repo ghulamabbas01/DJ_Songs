@@ -11,12 +11,12 @@ body {
 font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 400;
+
 }
 .max_container{
   width: 100%;
   max-width: 500px;
   margin: auto;
-  border: 1px solid #000;
   height: 100vh;
 }
 ::placeholder {
@@ -26,21 +26,27 @@ font-family: 'Roboto', sans-serif;
 
 .MuiFormLabel-root {
   color: #E6E0E9 !important;
+  /* background: #141218;
+  padding: 0px 4px; */
 }
 
 .MuiFormLabel-root.Mui-focused {
   color: #E6E0E9 !important;
+  
 }
 input {
   color: #E6E0E9 !important;
+  
 }
 
 .MuiInputAdornment-root {
   color: #fff !important;
+  
 }
 
 fieldset {
   border-color: #E6E0E9 !important;
+
 }
 
 

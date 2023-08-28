@@ -7,8 +7,11 @@ import {
   Typography,
   InputAdornment,
 } from "@mui/material";
+
+// useNavigate
 import { useNavigate } from "react-router-dom";
 
+// icons 
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import PaymentOutlinedIcon from "@mui/icons-material/PaymentOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";

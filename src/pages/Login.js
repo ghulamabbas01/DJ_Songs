@@ -76,6 +76,7 @@ const Login = () => {
           label="Password"
           placeholder="input"
           fullWidth
+          type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           InputProps={{

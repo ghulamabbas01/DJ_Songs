@@ -7,6 +7,10 @@ import InterCode from "./pages/InterCode";
 import CreateAccount from "./pages/CreateAccount";
 import Home from "./pages/Home";
 import CreateNewEvent from "./pages/CreateNewEvent";
+import DjSongs from "./pages/DJSongs";
+import ModifyDetails from "./pages/ModifyDetails";
+import SongsHome from "./pages/SongsHome";
+import RequestSong from "./pages/RequestSong";
 
 function App() {
   return (
@@ -18,6 +22,10 @@ function App() {
         <Route path="/CreateAccount" element={<CreateAccount />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/CreateNewEvent" element={<CreateNewEvent />} />
+        <Route path="/DjSongs" element={<DjSongs />} />
+        <Route path="/SongsHome" element={<SongsHome />} />
+        <Route path="/ModifyDetails" element={<ModifyDetails />} />
+        <Route path="/RequestSong" element={<RequestSong />} />
       </Routes>
     </Router>
   );

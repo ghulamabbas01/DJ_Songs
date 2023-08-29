@@ -22,6 +22,12 @@ const Home = () => {
   const createNewEvent = () => {
     navigate("/CreateNewEvent");
   };
+
+  // modefiy perfile
+  const HandleModefiyProfileH = () => {
+    navigate("/ModifyDetails");
+  };
+
   return (
     <Box className="max_container bg-black z-0 text-gray-500 ">
       {/* top navbar start */}
@@ -35,17 +41,19 @@ const Home = () => {
           <HouseOutlinedIcon className="text-white " />
         </Box>
         <Box>
-          <img
-            src={Thambnil}
-            alt="thaml"
-            width={75}
-            height={32}
-            className="cursor-pointer"
-          />
+          <a href="/">
+            <img
+              src={Thambnil}
+              alt="thaml"
+              width={75}
+              height={32}
+              className="cursor-pointer"
+            />
+          </a>
         </Box>
-        <Box aria-label="" className="cursor-pointer">
+        <IconButton aria-label="" onClick={HandleModefiyProfileH}>
           <Person2OutlinedIcon className="text-white" />
-        </Box>
+        </IconButton>
       </Stack>
       {/* top navbar end*/}
       {/*Header Name and Pic start*/}

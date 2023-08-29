@@ -154,6 +154,7 @@ const CreateNewEvent = () => {
             {error}
           </Typography>
         )}
+        {/* button  */}
         <Button
           variant="contained"
           color="primary"

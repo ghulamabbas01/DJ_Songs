@@ -17,7 +17,7 @@ const InterCode = () => {
 
   const navigate = useNavigate();
   function handleClick() {
-    navigate("/Home");
+    navigate("/SongsHome");
   }
 
   return (

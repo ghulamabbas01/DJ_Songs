@@ -176,7 +176,6 @@ const ModifyDetails = () => {
           variant="outlined"
         />
       </Stack>
-      {error && <Typography color="error">{error}</Typography>}
       {/* Buttons */}
       <Stack spacing={2} className="mt-6 px-12">
         <Button

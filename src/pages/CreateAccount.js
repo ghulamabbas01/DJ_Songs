@@ -159,7 +159,6 @@ const CreateAccount = () => {
           variant="outlined"
         />
       </Stack>
-      {error && <Typography color="error">{error}</Typography>}
       {/* Buttons */}
       <Stack spacing={2} className="my-32 px-12">
         <Button

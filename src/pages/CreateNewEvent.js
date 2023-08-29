@@ -149,11 +149,6 @@ const CreateNewEvent = () => {
         />
       </Box>
       <Box className="mt-10 px-12">
-        {error && (
-          <Typography color="error" className="text-center pb-2">
-            {error}
-          </Typography>
-        )}
         {/* button  */}
         <Button
           variant="contained"

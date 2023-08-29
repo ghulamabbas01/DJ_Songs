@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { Box, Divider, InputAdornment, Popper } from "@mui/material";
+import { Box, Divider, InputAdornment } from "@mui/material";
+import Popover from "@mui/material/Popover";
 
 import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export default function AutoCompleate() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(true);
 
   const [songname, setSongname] = useState("");
 
@@ -16,11 +17,15 @@ export default function AutoCompleate() {
   };
 
   const handleClick = (event) => {
-    setAnchorEl(anchorEl ? null : event.currentTarget);
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
   };
 
   const open = Boolean(anchorEl);
-  const id = open ? "simple-popper" : undefined;
+  const id = open ? "simple-popover" : undefined;
 
   return (
     <Box className="pt-5 px-1">
@@ -49,17 +54,14 @@ export default function AutoCompleate() {
         }}
         variant="outlined"
       />
-      <Popper
+      <Popover
         id={id}
         open={open}
         anchorEl={anchorEl}
+        onClose={handleClose}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "right",
-        }}
-        transformOrigin={{
           vertical: "top",
-          horizontal: "right",
+          horizontal: "left",
         }}>
         <Box sx={{ width: 180, bgcolor: "#6daeff", color: "#fff" }}>
           <Box className="py-2 px-3">
@@ -78,7 +80,7 @@ export default function AutoCompleate() {
           </Box>
           <Divider className="text-black " />
         </Box>
-      </Popper>
+      </Popover>
     </Box>
   );
 }

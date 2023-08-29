@@ -11,6 +11,7 @@ body {
 font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 400;
+  background: #000;
 
 }
 .max_container{
@@ -49,8 +50,10 @@ fieldset {
 
 }
 
-.MuiPopper-root{
-transform: translate(4px, 76px) !important ;
+.MuiPaper-root{
+position: absolute !important;
+    top: 79px !important;
+    left: 4px !important;
 }
 
 

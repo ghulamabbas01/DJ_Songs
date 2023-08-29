@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleLogin = () => {
     if (email === "" || password === "") {
-      setErrorMessage("Please Create Account");
+      setErrorMessage("");
       return;
     }
     navigate("/Home"); // Navigate to the dashboard on successful login

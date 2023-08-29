@@ -37,7 +37,7 @@ const RequestSong = () => {
   return (
     <Box className="max_container text-center bg-black z-0 text-gray-500   ">
       <AutoCompleate />
-      <Box className="mt-56 px-1">
+      <Box className=" px-1">
         <TextField
           id="input-with-icon-textfield"
           label="Tip Amount"

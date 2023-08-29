@@ -8,12 +8,12 @@ import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRen
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export default function AutoCompleate() {
-  const [anchorEl, setAnchorEl] = React.useState(true);
+  const [anchorEl, setAnchorEl] = useState(null); // Initialize with null
 
   const [songname, setSongname] = useState("");
 
   const clearInput = () => {
-    setSongname(""); // Clear the tip input
+    setSongname(""); // Clear the input
   };
 
   const handleClick = (event) => {
@@ -26,6 +26,8 @@ export default function AutoCompleate() {
 
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
+
+  const boxMargin = open ? "mt-52" : "mt-10"; // Set margin based on popover open/close state
 
   return (
     <Box className="pt-5 px-1">
@@ -54,6 +56,7 @@ export default function AutoCompleate() {
         }}
         variant="outlined"
       />
+      <Box className={boxMargin}></Box>
       <Popover
         id={id}
         open={open}

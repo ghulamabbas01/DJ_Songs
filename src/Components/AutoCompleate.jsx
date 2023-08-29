@@ -8,7 +8,7 @@ import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRen
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export default function AutoCompleate() {
-  const [anchorEl, setAnchorEl] = useState(null); // Initialize with null
+  const [anchorEl, setAnchorEl] = useState(true); // Initialize with null
 
   const [songname, setSongname] = useState("");
 

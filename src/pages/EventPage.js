@@ -58,7 +58,8 @@ const EventPage = () => {
   };
 
   const handleClearClick = () => {
-    // Define the logic for clearing the selected file
+    // Handle clearing the selected file
+    setSelectedFile("");
   };
 
   const clearInput = (inputField) => {
@@ -104,22 +105,21 @@ const EventPage = () => {
       {/* ... (rest of your component code) */}
       <Stack className="bg-gray-500 px-6 mt-8 py-8 rounded-[40px] mx-3">
         <p className="text-[#CAC4D0]">Select Date</p>
-        <Box className="flex flex-row justify-between mb-7 mt-7 pb-3 border-b-[1px]">
-          <h3 className="text-[#E6E0E9]">Enter Dates</h3>
-          <DateRangeOutlinedIcon className="text-[#CAC4D0]" />
+
+        <Box className="mt-5">
+          <TextField
+            id="input-with-icon-textfield"
+            label="Date"
+            type="date"
+            fullWidth
+            variant="outlined"
+            value={selectedDate}
+            onChange={(e) => setSelectedDate(e.target.value)}
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
         </Box>
-        <TextField
-          id="input-with-icon-textfield"
-          label="Date"
-          type="date"
-          fullWidth
-          variant="outlined"
-          value={selectedDate}
-          onChange={(e) => setSelectedDate(e.target.value)}
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
       </Stack>
       <Box className="mt-10">
         <TextField

@@ -24,7 +24,7 @@ function App() {
         <Route path="/DjSongs" element={<DjSongs />} />
         <Route path="/SongsHome" element={<SongsHome />} />
         <Route path="/ModifyDetails" element={<ModifyDetails />} />
-        <Route path="/Event/:eventId/RequestSong" element={<RequestSong />} />
+        <Route path="RequestSong" element={<RequestSong />} />
       </Routes>
     </Router>
   );

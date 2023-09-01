@@ -14,7 +14,7 @@ const InterCode = () => {
 
   const handleJoinEvent = () => {
     if (inputValue.trim() !== "") {
-      navigate(`/Event/${inputValue}`); // Modify the URL pattern as needed
+      navigate(`/SongsHome`); // Modify the URL pattern as needed
     }
   };
 

@@ -20,7 +20,6 @@ const InterCode = () => {
 
   return (
     <Box className="max_container text-center bg-black text-gray-500 p-10 ">
-      <h1 className="text-[48px] font-medium pb-10 text-white">Event Code</h1>
       <Stack>
         <TextField
           id="input-with-icon-textfield"

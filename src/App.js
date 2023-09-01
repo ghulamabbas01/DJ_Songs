@@ -1,12 +1,11 @@
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-// import All Components 
 import HomeLogin from "./pages/HomeLogin";
 import Login from "./pages/Login";
-import InterCode from "./pages/InterCode";
+import EnterCode from "./pages/EnterCode"; // Renamed from InterCode
 import CreateAccount from "./pages/CreateAccount";
 import Home from "./pages/Home";
-import CreateNewEvent from "./pages/CreateNewEvent";
+import EventPage from "./pages/EventPage"; // Renamed from CreateNewEvent
 import DjSongs from "./pages/DJSongs";
 import ModifyDetails from "./pages/ModifyDetails";
 import SongsHome from "./pages/SongsHome";
@@ -18,14 +17,14 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeLogin />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/InterCode" element={<InterCode />} />
+        <Route path="/EnterCode" element={<EnterCode />} />
         <Route path="/CreateAccount" element={<CreateAccount />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/CreateNewEvent" element={<CreateNewEvent />} />
+        <Route path="/EventPage" element={<EventPage />} />
         <Route path="/DjSongs" element={<DjSongs />} />
         <Route path="/SongsHome" element={<SongsHome />} />
         <Route path="/ModifyDetails" element={<ModifyDetails />} />
-        <Route path="/RequestSong" element={<RequestSong />} />
+        <Route path="/Event/:eventId/RequestSong" element={<RequestSong />} />
       </Routes>
     </Router>
   );

@@ -19,7 +19,7 @@ const LoginHome = () => {
   }
   // use a code
   function codeHandleClick() {
-    navigate("/InterCode");
+    navigate("/EnterCode");
   }
 
   return (

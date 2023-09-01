@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+// useNavigate
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Button,
@@ -10,10 +11,9 @@ import {
   Divider,
 } from "@mui/material";
 
-// useNavigate
-import { useNavigate } from "react-router-dom";
+import QRCode from "react-qr-code";
+import { useParams } from "react-router-dom";
 
-// icons
 import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
@@ -21,46 +21,64 @@ import IconButton from "@mui/material/IconButton";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-const CreateNewEvent = () => {
+// Generate a random event ID
+const generateEventId = () => {
+  const characters =
+    "urpaTJWJDuSCHy53eIRVMiNn+ePmwYOdcSxjWeaURjGh2UrK2h/mD/qTZcROecJ4lbAuOxU6TTCLsmwR/Sh0+A==";
+  const eventIdLength = 6;
+  let eventId = "EM5C6W0VNZAJZFFA";
+  for (let i = 0; i < eventIdLength; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    eventId += characters.charAt(randomIndex);
+  }
+  return eventId;
+};
+
+const EventPage = () => {
+  const navigate = useNavigate();
   const [eventName, setEventName] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedDate, setSelectedDate] = useState("");
+  // const [eventId, setEventId] = useState(generateEventId()); // Generate a random event ID
   const [error, setError] = useState("");
-
-  const navigate = useNavigate();
-
-  const clearInput = (field) => {
-    if (field === "eventName") {
-      setEventName("");
-    }
-  };
-
-  const handleFileInputChange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      setSelectedFile(file);
-    }
-  };
-
-  const handleClearClick = () => {
-    setSelectedFile(null);
-  };
+  const { eventId, ewZw } = useParams();
 
   const CreateNewAccount = () => {
     if (selectedDate && selectedFile && eventName) {
-      navigate("/Home");
+      navigate(`/Event/${eventId}`); // Navigate to the event page with the generated event ID
     } else {
-      setError("Name,Date and Image are required.");
+      setError("Name, Date, and Image are required.");
     }
+  };
+
+  // Initialize the useNavigate hook
+
+  const handleFileInputChange = (e) => {
+    // Define the logic for handling file input change
+  };
+
+  const handleClearClick = () => {
+    // Define the logic for clearing the selected file
+  };
+
+  const clearInput = (inputField) => {
+    setEventName("");
   };
 
   return (
     <Box className="max_container bg-black z-0 text-gray-500 px-1">
-      <Box className="pt-6">
-        {/* Event Name textfield  */}
+      <div>
+        <h1>Event Page</h1>
+        <p>Event ID: {eventId}</p>
+        <p>ewZw: {ewZw}</p>
+      </div>
+      <Box className="mt-5 text-center flex justify-center">
+        <QRCode title="test" value={window.location.href} />
+      </Box>
+      <Box className="mt-10">
         <TextField
           id="input-with-icon-textfield"
-          label="Event Name"
+          label="Username"
           placeholder="input"
           fullWidth
           value={eventName}
@@ -74,7 +92,7 @@ const CreateNewEvent = () => {
             endAdornment: (
               <InputAdornment position="end">
                 <HighlightOffIcon
-                  onClick={() => clearInput("username")}
+                  onClick={() => clearInput("eventName")}
                   style={{ cursor: "pointer" }}
                 />
               </InputAdornment>
@@ -83,13 +101,13 @@ const CreateNewEvent = () => {
           variant="outlined"
         />
       </Box>
-      <Stack className="bg-gray-500 px-6 mt-8 py-4 rounded-[40px] mx-3">
+      {/* ... (rest of your component code) */}
+      <Stack className="bg-gray-500 px-6 mt-8 py-8 rounded-[40px] mx-3">
         <p className="text-[#CAC4D0]">Select Date</p>
         <Box className="flex flex-row justify-between mb-7 mt-7 pb-3 border-b-[1px]">
           <h3 className="text-[#E6E0E9]">Enter Dates</h3>
           <DateRangeOutlinedIcon className="text-[#CAC4D0]" />
         </Box>
-
         <TextField
           id="input-with-icon-textfield"
           label="Date"
@@ -102,10 +120,6 @@ const CreateNewEvent = () => {
             shrink: true,
           }}
         />
-        <Box className="text-end mt-6">
-          <button className="text-[#D0BCFF] py-[10px] px-3">Cencel</button>
-          <button className="text-[#D0BCFF] py-[10px] px-3">Ok</button>
-        </Box>
       </Stack>
       <Box className="mt-10">
         <TextField
@@ -149,7 +163,6 @@ const CreateNewEvent = () => {
         />
       </Box>
       <Box className="mt-10 px-12">
-        {/* button  */}
         <Button
           variant="contained"
           color="primary"
@@ -166,4 +179,4 @@ const CreateNewEvent = () => {
   );
 };
 
-export default CreateNewEvent;
+export default EventPage;

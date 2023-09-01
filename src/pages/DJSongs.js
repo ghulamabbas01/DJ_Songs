@@ -1,5 +1,4 @@
 import React from "react";
-
 // import mui
 import { Box, Stack, IconButton, Avatar, Divider, Button } from "@mui/material";
 
@@ -17,7 +16,7 @@ import Thambnil from "../static/Images/Thumbnail.svg";
 const DjSongs = () => {
   return (
     <Box
-      className="max_container bg-black z-0 text-gray-500  "
+      className="max_container bg-black z-0 text-gray-500"
       sx={{ height: 700 }}>
       {/* top navbar start */}
       <Stack
@@ -54,10 +53,11 @@ const DjSongs = () => {
         />
       </Stack>
       {/*Header Name and Pic end*/}
-      {/*Active Events start*/}
+
       <Stack className="px-2 mt-[50px]">
         <h3 className="uppercase font-medium text-white mb-2">Active Events</h3>
         <Divider color="gray" width="320px" />
+        {/*Active Events end*/}
         <Stack
           direction="row"
           justifyContent="space-between"

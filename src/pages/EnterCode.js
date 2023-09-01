@@ -1,11 +1,6 @@
 import React, { useState } from "react";
-// import material ui
 import { Box, Button, Stack, TextField, InputAdornment } from "@mui/material";
-
-// icons
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
-
-// navgater
 import { useNavigate } from "react-router-dom";
 
 const InterCode = () => {
@@ -16,15 +11,17 @@ const InterCode = () => {
   };
 
   const navigate = useNavigate();
-  function handleClick() {
-    navigate("/SongsHome");
-  }
+
+  const handleJoinEvent = () => {
+    if (inputValue.trim() !== "") {
+      navigate(`/Event/${inputValue}`); // Modify the URL pattern as needed
+    }
+  };
 
   return (
     <Box className="max_container text-center bg-black text-gray-500 p-10 ">
       <h1 className="text-[48px] font-medium pb-10 text-white">Event Code</h1>
       <Stack>
-        {/* code input  */}
         <TextField
           id="input-with-icon-textfield"
           label="Event Code"
@@ -50,7 +47,7 @@ const InterCode = () => {
           variant="contained"
           color="primary"
           size="large"
-          onClick={handleClick}
+          onClick={handleJoinEvent}
           sx={{ padding: 1.3 }}>
           Join Event
         </Button>

@@ -18,9 +18,10 @@ import { useNavigate } from "react-router-dom";
 
 
 const Home = () => {
-  const navigate = useNavigate();
-  const createNewEvent = () => {
-    navigate("/CreateNewEvent");
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+  const handleCreateEventClick = () => {
+    navigate("/EventPage"); // Navigate to the CreateNewEvent page
   };
 
   // modefiy perfile
@@ -125,7 +126,7 @@ const Home = () => {
           className="flex items-center"
           startIcon={<ArrowRightIcon />}
           fullWidth
-          onClick={createNewEvent}
+          onClick={handleCreateEventClick}
           sx={{ padding: 1.3, borderRadius: "40px" }}>
           Create New Event
         </Button>

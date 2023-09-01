@@ -47,7 +47,7 @@ const SongsHome = () => {
           alignItems="center"
           className=" bg-[#6daeff] py-3 pl-4 pr-6 rounded-2xl mt-1">
           <Box>
-            <h4 className="text-black font-medium">Song Name</h4>
+            <h4 className="text-black font-medium mb-2">Song Name</h4>
             <p className="text-black">Artist Name</p>
           </Box>
           <Stack spacing={2} direction="row" alignItems="center">
@@ -77,7 +77,7 @@ const SongsHome = () => {
           <Box className="flex items-center gap-5">
             <CheckCircleOutlineIcon className="text-black" />
             <div>
-              <h4 className="text-black font-medium">Song Name</h4>
+              <h4 className="text-black font-medium mb-2">Song Name</h4>
               <p className="text-gray-500">Artist Name</p>
             </div>
           </Box>

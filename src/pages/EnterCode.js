@@ -4,17 +4,17 @@ import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 import { useNavigate } from "react-router-dom";
 
 const InterCode = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [eventCode, setEventCode] = useState(""); // Add event code state
 
   const handleClearClick = () => {
-    setInputValue("");
+    setEventCode(""); // Clear the event code when the clear icon is clicked
   };
 
   const navigate = useNavigate();
 
   const handleJoinEvent = () => {
-    if (inputValue.trim() !== "") {
-      navigate(`/SongsHome`); // Modify the URL pattern as needed
+    if (eventCode.trim() !== "") {
+      navigate(`/SongsHome`); // Navigate to a URL with the event code
     }
   };
 
@@ -24,10 +24,10 @@ const InterCode = () => {
         <TextField
           id="input-with-icon-textfield"
           label="Event Code"
-          placeholder="123456"
+          placeholder="Nuit" // Set the placeholder to "Nuit"
           fullWidth
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
+          value={eventCode}
+          onChange={(e) => setEventCode(e.target.value)}
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">

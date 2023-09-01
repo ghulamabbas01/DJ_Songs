@@ -85,9 +85,8 @@ const CreateAccount = () => {
         <TextField
           id="input-with-icon-textfield"
           label="Paypal handle"
-          placeholder="input"
+          placeholder="i.e josuguti02"
           fullWidth
-          type="number"
           value={paypalHandle}
           onChange={(e) => setPaypalHandle(e.target.value)}
           InputProps={{
@@ -137,6 +136,7 @@ const CreateAccount = () => {
         <TextField
           id="input-with-icon-textfield"
           label="Password"
+          type="password"
           placeholder="input"
           fullWidth
           value={password}

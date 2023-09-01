@@ -45,7 +45,7 @@ const EventPage = () => {
 
   const CreateNewAccount = () => {
     if (selectedDate && selectedFile && eventName) {
-      navigate(`/Event/${eventId}`); // Navigate to the event page with the generated event ID
+      navigate(`/Home`); // Navigate to the event page with the generated event ID
     } else {
       setError("Name, Date, and Image are required.");
     }

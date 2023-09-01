@@ -64,7 +64,7 @@ const DjSongs = () => {
           alignItems="center"
           className=" bg-white py-3 pl-4 pr-6 rounded-2xl mt-1 ">
           <Box>
-            <h4 className="text-black font-medium">Song Name</h4>
+            <h4 className="text-black font-medium mb-2">Song Name</h4>
             <p className="text-black">Artist Name</p>
           </Box>
           <Stack spacing={2} direction="row" alignItems="center">
@@ -85,7 +85,7 @@ const DjSongs = () => {
           alignItems="center"
           className=" bg-white py-3 pl-4 pr-6 rounded-2xl mt-1">
           <Box>
-            <h4 className="text-black font-medium">Song Name</h4>
+            <h4 className="text-black font-medium mb-2">Song Name</h4>
             <p className="text-black">Artist Name</p>
           </Box>
           <Stack spacing={2} direction="row" alignItems="center">
@@ -114,18 +114,17 @@ const DjSongs = () => {
           <Box className="flex items-center gap-2">
             <CheckCircleOutlineIcon className="text-black" />
             <div>
-              <h4 className="text-black font-medium">Song Name</h4>
+              <h4 className="text-black font-medium mb-2">Song Name</h4>
               <p className="text-black">Artist Name</p>
             </div>
           </Box>
           <Stack spacing={2} direction="row" alignItems="center">
             <p className="text-red-900 font-medium">$200</p>
             <button className="bg-white shadow-xl border-[1px] rounded-[40px] px-4 h-10 tracking-widest text-black font-medium">
-              <ThumbUpOutlinedIcon className="mr-2" />
+           <div className="mr-2"></div>
               20
             </button>
             <button className="bg-white shadow-xl border-[1px] rounded-[40px] px-4 h-10 tracking-widest text-black font-medium">
-              <ThumbDownOutlinedIcon className="mr-2" />
               20
             </button>
           </Stack>
@@ -138,18 +137,16 @@ const DjSongs = () => {
           <Box className="flex items-center gap-2">
             <CheckCircleOutlineIcon className="text-green-600" />
             <div>
-              <h4 className="text-black font-medium">Song Name</h4>
+              <h4 className="text-black font-medium mb-2">Song Name</h4>
               <p className="text-black">Artist Name</p>
             </div>
           </Box>
           <Stack spacing={2} direction="row" alignItems="center">
             <p className="text-green-600 font-medium">$200</p>
             <button className="bg-white shadow-xl border-[1px] rounded-[40px] px-4 h-10 tracking-widest text-black font-medium">
-              <ThumbUpOutlinedIcon className="mr-2" />
               20
             </button>
             <button className="bg-white shadow-xl border-[1px] rounded-[40px] px-4 h-10 tracking-widest text-black font-medium">
-              <ThumbDownOutlinedIcon className="mr-2" />
               20
             </button>
           </Stack>

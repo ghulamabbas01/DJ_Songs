@@ -107,7 +107,7 @@ const Login = () => {
           startIcon={<ArrowRightIcon />}
           sx={{ padding: 1.3, borderRadius: "40px" }}
           onClick={handleLogin}>
-          Logins
+          Login
         </Button>
         <Button
           variant="contained"

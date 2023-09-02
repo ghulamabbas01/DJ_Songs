@@ -21,18 +21,7 @@ import IconButton from "@mui/material/IconButton";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-// Generate a random event ID
-const generateEventId = () => {
-  const characters =
-    "urpaTJWJDuSCHy53eIRVMiNn+ePmwYOdcSxjWeaURjGh2UrK2h/mD/qTZcROecJ4lbAuOxU6TTCLsmwR/Sh0+A==";
-  const eventIdLength = 6;
-  let eventId = "EM5C6W0VNZAJZFFA";
-  for (let i = 0; i < eventIdLength; i++) {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    eventId += characters.charAt(randomIndex);
-  }
-  return eventId;
-};
+import useEventId from "./EventDetails";
 
 const EventPage = () => {
   const navigate = useNavigate();
@@ -41,14 +30,26 @@ const EventPage = () => {
   const [selectedDate, setSelectedDate] = useState("");
   // const [eventId, setEventId] = useState(generateEventId()); // Generate a random event ID
   const [error, setError] = useState("");
-  const { eventId, ewZw } = useParams();
+  const { eventId, setEventId } = useEventId();
 
-  const CreateNewAccount = () => {
-    if (selectedDate && selectedFile && eventName) {
-      navigate(`/Home`); // Navigate to the event page with the generated event ID
-    } else {
-      setError("Name, Date, and Image are required.");
+  // const CreateNewAccount = () => {
+  //   if (selectedDate && selectedFile && eventName) {
+  //     navigate(`/EventPage/${eventId}`); // Navigate to the event page with the generated event ID
+  //   } else {
+  //     setError("Name, Date, and Image are required.");
+  //   }
+  // };
+
+  const generateEventId = () => {
+    // Generate your event ID logic here
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    const eventIdLength = 6;
+    let newEventId = "";
+    for (let i = 0; i < eventIdLength; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      newEventId += characters.charAt(randomIndex);
     }
+    setEventId(newEventId); // Set the new event ID using the context
   };
 
   // Initialize the useNavigate hook
@@ -68,11 +69,11 @@ const EventPage = () => {
 
   return (
     <Box className="max_container bg-black z-0 text-gray-500 px-1">
-      <div>
+      {/* <div>
         <h1>Event Page</h1>
         <p>Event ID: {eventId}</p>
         <p>ewZw: {ewZw}</p>
-      </div>
+      </div> */}
       <Box className="mt-5 text-center flex justify-center">
         <QRCode title="test" value={window.location.href} />
       </Box>
@@ -169,7 +170,7 @@ const EventPage = () => {
           size="large"
           fullWidth
           className="flex items-center"
-          onClick={CreateNewAccount}
+          onClick={generateEventId}
           startIcon={<ArrowRightIcon />}
           sx={{ padding: 1.3, borderRadius: "40px" }}>
           Create Event

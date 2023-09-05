@@ -46,7 +46,7 @@ const LoginHome = () => {
           Enter Code
         </Button>
       </Stack>
-      <h1 className="text-[64px] font-medium">JukeJar</h1>
+      <img src="/logo.png" alt="logo" className="mx-auto w-[150px]"/>
     </Box>
   );
 };

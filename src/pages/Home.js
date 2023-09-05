@@ -21,7 +21,7 @@ const Home = () => {
   const navigate = useNavigate(); // Initialize the useNavigate hook
 
   const handleCreateEventClick = () => {
-    navigate("/EventPage"); // Navigate to the CreateNewEvent page
+    navigate("/CreateEvent"); // Navigate to the CreateNewEvent page
   };
 
   // modefiy perfile
@@ -35,7 +35,7 @@ const Home = () => {
       <Stack
         direction="row"
         justifyContent="space-between"
-        className="px-16 py-3 bg-[#211F26]">
+        className="px-16 py-3 ">
         <Box
           aria-label=""
           className="bg-slate-400 px-6 py-1 flex items-center rounded-3xl cursor-pointer">
@@ -72,7 +72,7 @@ const Home = () => {
       {/*Active Events start*/}
       <Stack className="px-2 mt-[50px]">
         <h3 className="uppercase font-medium text-white mb-2">Active Events</h3>
-        <Divider color="gray" width="320px" />
+        <Divider color="gray" width="100%" />
         <Stack
           direction="row"
           justifyContent="space-between"
@@ -83,10 +83,17 @@ const Home = () => {
             <p className="text-black">04/10/2023</p>
           </Box>
           <Stack spacing={2} direction="row">
-            <button className="bg-[#0a1c39] rounded-[40px] px-4 h-10 tracking-widest text-white">
-              Download QR
-            </button>
-            <button className="bg-[#0060AB] px-4 rounded-[40px] h-10 tracking-widest  text-black font-medium">
+            <a
+              href="/qr.png"
+              download="/qr.png"
+              className="bg-[#0a1c39] rounded-[40px] flex items-center justify-center px-4 h-10 tracking-widest text-white">
+              <div>Download Image</div>
+            </a>
+            <button
+              onClick={() => {
+                navigate("/Events/:asd");
+              }}
+              className="bg-[#0060AB] px-4 rounded-[40px] h-10 tracking-widest  text-black font-medium">
               Open
             </button>
           </Stack>
@@ -96,7 +103,7 @@ const Home = () => {
       {/*Past Events start*/}
       <Stack className="px-2 mt-[50px]">
         <h3 className="uppercase font-medium text-white mb-2">Past Events</h3>
-        <Divider color="gray" width="320px" />
+        <Divider color="gray" width="100%" />
         <Stack
           direction="row"
           justifyContent="space-between"
@@ -110,7 +117,11 @@ const Home = () => {
             <p className="font-medium text-blue-600 tracking-widest cursor-pointer ">
               $200
             </p>
-            <button className="bg-[#00A62E] px-4 rounded-[40px] h-10 tracking-widest  text-black font-medium">
+            <button
+              onClick={() => {
+                navigate("/Events/:asd");
+              }}
+              className="bg-[#00A62E] px-4 rounded-[40px] h-10 tracking-widest  text-black font-medium">
               <LibraryMusicIcon />
               Open
             </button>

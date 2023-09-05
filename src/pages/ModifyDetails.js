@@ -103,7 +103,7 @@ const ModifyDetails = () => {
           label="Paypal handle"
           placeholder="josuguti"
           fullWidth
-          type="number"
+          type="text"
           value={paypalHandle}
           onChange={(e) => setPaypalHandle(e.target.value)}
           InputProps={{

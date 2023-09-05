@@ -13,9 +13,7 @@ const InterCode = () => {
   const navigate = useNavigate();
 
   const handleJoinEvent = () => {
-    if (eventCode.trim() !== "") {
-      navigate(`/SongsHome`); // Navigate to a URL with the event code
-    }
+    navigate("/SongsHome"); // Navigate to a URL with the event code
   };
 
   return (

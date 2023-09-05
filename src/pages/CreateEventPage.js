@@ -11,46 +11,20 @@ import {
   Divider,
 } from "@mui/material";
 
-import QRCode from "react-qr-code";
-import { useParams } from "react-router-dom";
-
 import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
-import DateRangeOutlinedIcon from "@mui/icons-material/DateRangeOutlined";
 import IconButton from "@mui/material/IconButton";
 import AttachFileIcon from "@mui/icons-material/AttachFile";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
-import useEventId from "./EventDetails";
-
-const EventPage = () => {
+const CreateEventPage = () => {
   const navigate = useNavigate();
   const [eventName, setEventName] = useState("");
   const [selectedFile, setSelectedFile] = useState(null);
   const [selectedDate, setSelectedDate] = useState("");
-  const [eventId, setEventId] = useState(generateEventId()); // Generate a random event ID
   const [error, setError] = useState("");
-  const { eventId, setEventId } = useEventId();
 
-  // const CreateNewAccount = () => {
-  //   if (selectedDate && selectedFile && eventName) {
-  //     navigate(`/EventPage/${eventId}`); // Navigate to the event page with the generated event ID
-  //   } else {
-  //     setError("Name, Date, and Image are required.");
-  //   }
-  // };
 
-  const generateEventId = () => {
-    // Generate your event ID logic here
-    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    const eventIdLength = 6;
-    let newEventId = "";
-    for (let i = 0; i < eventIdLength; i++) {
-      const randomIndex = Math.floor(Math.random() * characters.length);
-      newEventId += characters.charAt(randomIndex);
-    }
-    setEventId(newEventId); // Set the new event ID using the context
-  };
 
   // Initialize the useNavigate hook
 
@@ -69,14 +43,6 @@ const EventPage = () => {
 
   return (
     <Box className="max_container bg-black z-0 text-gray-500 px-1">
-      {/* <div>
-        <h1>Event Page</h1>
-        <p>Event ID: {eventId}</p>
-        <p>ewZw: {ewZw}</p>
-      </div> */}
-      <Box className="mt-5 text-center flex justify-center">
-        <QRCode title="test" value={window.location.href} />
-      </Box>
       <Box className="mt-10">
         <TextField
           id="input-with-icon-textfield"
@@ -127,6 +93,7 @@ const EventPage = () => {
           id="input-file-textfield"
           label="Insert Picture for QR code (optional)"
           type="file"
+          accept=".png, .jpg"
           fullWidth
           variant="outlined"
           value={selectedFile}
@@ -143,6 +110,7 @@ const EventPage = () => {
                 <AttachFileIcon style={{ color: "white" }} />
                 <input
                   type="file"
+                  accept=".png, .jpg"
                   style={{ display: "none" }}
                   onChange={handleFileInputChange}
                 />
@@ -169,8 +137,8 @@ const EventPage = () => {
           color="primary"
           size="large"
           fullWidth
+          onClick={()=> {navigate("/Events/:asd")}}
           className="flex items-center"
-          onClick={generateEventId}
           startIcon={<ArrowRightIcon />}
           sx={{ padding: 1.3, borderRadius: "40px" }}>
           Create Event
@@ -180,4 +148,4 @@ const EventPage = () => {
   );
 };
 
-export default EventPage;
+export default CreateEventPage;
